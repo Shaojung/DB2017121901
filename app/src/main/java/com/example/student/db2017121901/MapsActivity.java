@@ -50,6 +50,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
         mMap.addMarker(new MarkerOptions().position(p3).title("p3").
                 icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(p1, 15));
+        // mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(p1, 15));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(p1, 15), 10000, null);
     }
 }

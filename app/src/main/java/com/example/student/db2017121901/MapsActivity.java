@@ -45,7 +45,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng p2 = new LatLng(25.0135, 121.4562);
         LatLng p3 = new LatLng(25.0195, 121.4982);
         mMap.addMarker(new MarkerOptions().position(p1).title("p1").
-                icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                icon(BitmapDescriptorFactory.fromResource(R.drawable.s711)));
         mMap.addMarker(new MarkerOptions().position(p2).title("p2").
                 icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
         mMap.addMarker(new MarkerOptions().position(p3).title("p3").

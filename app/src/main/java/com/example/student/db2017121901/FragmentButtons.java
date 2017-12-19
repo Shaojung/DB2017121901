@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+
+import java.util.Map;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -110,25 +114,26 @@ public class FragmentButtons extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        final MapsActivity act = (MapsActivity) getActivity();
         Button btn1 = (Button) getActivity().findViewById(R.id.button2);
         Button btn2 = (Button) getActivity().findViewById(R.id.button3);
         Button btn3 = (Button) getActivity().findViewById(R.id.button4);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                act.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(act.p1, 15), 3000, null);
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                act.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(act.p2, 15), 3000, null);
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                act.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(act.p3, 15), 3000, null);
             }
         });
     }

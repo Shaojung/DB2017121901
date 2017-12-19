@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     GoogleMap mMap;
-
+    LatLng p1, p2, p3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +41,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng p1 = new LatLng(25.0075, 121.4582);
-        LatLng p2 = new LatLng(25.0135, 121.4562);
-        LatLng p3 = new LatLng(25.0195, 121.4982);
+        p1 = new LatLng(25.0075, 121.4582);
+        p2 = new LatLng(25.0135, 121.4562);
+        p3 = new LatLng(25.0195, 121.4982);
         mMap.addMarker(new MarkerOptions().position(p1).title("p1").
                 icon(BitmapDescriptorFactory.fromResource(R.drawable.s711)));
         mMap.addMarker(new MarkerOptions().position(p2).title("p2").
@@ -51,6 +51,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(p3).title("p3").
                 icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
         // mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(p1, 15));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(p1, 15), 10000, null);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(p1, 15), 3000, null);
     }
 }

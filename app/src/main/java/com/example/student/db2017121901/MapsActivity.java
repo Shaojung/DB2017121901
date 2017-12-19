@@ -7,6 +7,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -42,9 +44,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng p1 = new LatLng(25.0075, 121.4582);
         LatLng p2 = new LatLng(25.0135, 121.4562);
         LatLng p3 = new LatLng(25.0195, 121.4982);
-        mMap.addMarker(new MarkerOptions().position(p1).title("p1"));
-        mMap.addMarker(new MarkerOptions().position(p2).title("p2"));
-        mMap.addMarker(new MarkerOptions().position(p3).title("p3"));
+        mMap.addMarker(new MarkerOptions().position(p1).title("p1").
+                icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(p2).title("p2").
+                icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        mMap.addMarker(new MarkerOptions().position(p3).title("p3").
+                icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(p1, 15));
     }
 }
